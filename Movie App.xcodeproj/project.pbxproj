@@ -62,14 +62,13 @@
 		A224712E265CFBD900EF3081 /* Movie App */ = {
 			isa = PBXGroup;
 			children = (
+				A26F67F3265FC8D2008F3F27 /* delegate */,
+				A26F67F2265FC8BD008F3F27 /* item */,
 				A26F67EA265F99EC008F3F27 /* db */,
 				A26F67E9265F99CF008F3F27 /* viewcontroller */,
 				A26F67E8265F99BE008F3F27 /* ui */,
-				A224712F265CFBD900EF3081 /* AppDelegate.swift */,
-				A2247131265CFBD900EF3081 /* SceneDelegate.swift */,
 				A224713B265CFBE500EF3081 /* Assets.xcassets */,
 				A2247140265CFBE500EF3081 /* Info.plist */,
-				A26F67EF265FB5EF008F3F27 /* MyCollectionViewCell.swift */,
 			);
 			path = "Movie App";
 			sourceTree = "<group>";
@@ -98,6 +97,23 @@
 				A2247138265CFBD900EF3081 /* Movie_App.xcdatamodeld */,
 			);
 			path = db;
+			sourceTree = "<group>";
+		};
+		A26F67F2265FC8BD008F3F27 /* item */ = {
+			isa = PBXGroup;
+			children = (
+				A26F67EF265FB5EF008F3F27 /* MyCollectionViewCell.swift */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		A26F67F3265FC8D2008F3F27 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				A2247131265CFBD900EF3081 /* SceneDelegate.swift */,
+				A224712F265CFBD900EF3081 /* AppDelegate.swift */,
+			);
+			path = delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
