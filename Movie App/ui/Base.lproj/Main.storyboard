@@ -62,13 +62,13 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5v-Mz-6dv">
-                                <rect key="frame" x="16" y="333" width="134" height="24"/>
+                                <rect key="frame" x="16" y="337" width="134" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DuY-yc-oDb">
-                                <rect key="frame" x="0.0" y="369" width="414" height="160"/>
+                                <rect key="frame" x="0.0" y="373" width="414" height="160"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="tqk-C3-be1"/>
@@ -91,13 +91,13 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Le3-1x-ahp">
-                                <rect key="frame" x="18" y="541" width="187" height="29"/>
+                                <rect key="frame" x="18" y="545" width="187" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EfC-Ym-qSf">
-                                <rect key="frame" x="0.0" y="582" width="414" height="231"/>
+                                <rect key="frame" x="0.0" y="586" width="414" height="227"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZfN-0F-gkI">
                                     <size key="itemSize" width="128" height="128"/>
@@ -116,6 +116,11 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="CXR-5P-win">
+                                <rect key="frame" x="145.5" y="285" width="123" height="28"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.62001818590000002" blue="0.36055449649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="backgroundColor"/>
@@ -127,12 +132,14 @@
                             <constraint firstItem="Cng-7z-Azq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Cn2-jv-3hu"/>
                             <constraint firstItem="Le3-1x-ahp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="GHN-Va-CZE"/>
                             <constraint firstItem="EfC-Ym-qSf" firstAttribute="top" secondItem="Le3-1x-ahp" secondAttribute="bottom" constant="12" id="LBq-zt-w1e"/>
+                            <constraint firstItem="CXR-5P-win" firstAttribute="centerX" secondItem="Cng-7z-Azq" secondAttribute="centerX" id="WZj-1I-NVd"/>
                             <constraint firstItem="Le3-1x-ahp" firstAttribute="top" secondItem="DuY-yc-oDb" secondAttribute="bottom" constant="12" id="bIH-nU-Wz1"/>
                             <constraint firstItem="DuY-yc-oDb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bw3-UH-Iqt"/>
+                            <constraint firstItem="CXR-5P-win" firstAttribute="bottom" secondItem="Cng-7z-Azq" secondAttribute="bottom" id="ddL-WA-m00"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EfC-Ym-qSf" secondAttribute="bottom" id="lHn-re-Qol"/>
                             <constraint firstItem="Cng-7z-Azq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="nGZ-bj-yP8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EfC-Ym-qSf" secondAttribute="trailing" id="wje-2k-4g7"/>
-                            <constraint firstItem="A5v-Mz-6dv" firstAttribute="top" secondItem="Cng-7z-Azq" secondAttribute="bottom" constant="20" id="yCH-4a-Agv"/>
+                            <constraint firstItem="A5v-Mz-6dv" firstAttribute="top" secondItem="Cng-7z-Azq" secondAttribute="bottom" constant="24" id="yCH-4a-Agv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DuY-yc-oDb" secondAttribute="trailing" id="yKD-w4-vxA"/>
                         </constraints>
                     </view>
@@ -146,6 +153,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="uiPageControl" destination="CXR-5P-win" id="qYe-Pt-Aku"/>
                         <outlet property="uiSliderView" destination="Cng-7z-Azq" id="9Jt-id-0JO"/>
                     </connections>
                 </viewController>

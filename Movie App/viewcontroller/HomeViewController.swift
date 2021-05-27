@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var uiSliderView: UICollectionView!
     
+    @IBOutlet weak var uiPageControl: UIPageControl!
     var timer:Timer?
     var currentCellIndex = 0
     var webserviceImage = ["image2","image1"]
@@ -18,7 +19,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(slideToNext), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideToNext), userInfo: nil, repeats: true)
+        
+        uiPageControl.numberOfPages = webserviceImage.count
         
     }
     
@@ -28,6 +31,8 @@ class HomeViewController: UIViewController {
         } else{
            currentCellIndex = 0
         }
+        
+        uiPageControl.currentPage = currentCellIndex
         
         uiSliderView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .right, animated: true)
     }
@@ -46,6 +51,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     let cell = uiSliderView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCollectionViewCell
     
     cell.uiImageView.image = UIImage(named: webserviceImage[indexPath.row])
+    
     
     return cell
 }
