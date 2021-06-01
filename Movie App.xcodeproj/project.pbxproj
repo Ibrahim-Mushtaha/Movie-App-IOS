@@ -16,6 +16,8 @@
 		A224713F265CFBE500EF3081 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A224713D265CFBE500EF3081 /* LaunchScreen.storyboard */; };
 		A26F67ED265FB4E1008F3F27 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F67EC265FB4E1008F3F27 /* HomeViewController.swift */; };
 		A26F67F0265FB5EF008F3F27 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F67EF265FB5EF008F3F27 /* MyCollectionViewCell.swift */; };
+		A27D17112666365B00A410CA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27D170F2666365B00A410CA /* CollectionViewCell.swift */; };
+		A27D17122666365B00A410CA /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A27D17102666365B00A410CA /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		A2247140265CFBE500EF3081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A26F67EC265FB4E1008F3F27 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A26F67EF265FB5EF008F3F27 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		A27D170F2666365B00A410CA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		A27D17102666365B00A410CA /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			children = (
 				A2247135265CFBD900EF3081 /* Main.storyboard */,
 				A224713D265CFBE500EF3081 /* LaunchScreen.storyboard */,
+				A27D170F2666365B00A410CA /* CollectionViewCell.swift */,
+				A27D17102666365B00A410CA /* CollectionViewCell.xib */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 			files = (
 				A224713F265CFBE500EF3081 /* LaunchScreen.storyboard in Resources */,
 				A224713C265CFBE500EF3081 /* Assets.xcassets in Resources */,
+				A27D17122666365B00A410CA /* CollectionViewCell.xib in Resources */,
 				A2247137265CFBD900EF3081 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +196,7 @@
 				A26F67ED265FB4E1008F3F27 /* HomeViewController.swift in Sources */,
 				A2247134265CFBD900EF3081 /* ViewController.swift in Sources */,
 				A26F67F0265FB5EF008F3F27 /* MyCollectionViewCell.swift in Sources */,
+				A27D17112666365B00A410CA /* CollectionViewCell.swift in Sources */,
 				A2247130265CFBD900EF3081 /* AppDelegate.swift in Sources */,
 				A224713A265CFBD900EF3081 /* Movie_App.xcdatamodeld in Sources */,
 				A2247132265CFBD900EF3081 /* SceneDelegate.swift in Sources */,
