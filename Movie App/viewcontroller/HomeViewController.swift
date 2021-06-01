@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
         
         uiPageControl.numberOfPages = webserviceImage.count
         
+        getMovie()
+        
     }
     
     @objc func slideToNext(){
@@ -55,6 +57,29 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     
     return cell
 }
+    
+    func getMovie(){
+        let session = URLSession.shared
+        let page = "1"
+        let lang = "en-US"
+        let apiKey = "28e048b6b84fcf21173939d6517a99ce"
+        if let url = URL(string: "https://api.themoviedb.org/3/movie/popular?page=\(page)&api_key=\(apiKey)&language=\(lang)"){
+            let task  = session.dataTask(with: url) { (data, res, error) in
+                let responseBody =  String(data: data!, encoding: .utf8)
+                let decoder = JSONDecoder()
+
+                do {
+                    let movie = try decoder.decode([Movie].self, from: data!)
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    print("data is =============\(movie)")
+                } catch {
+                    print("Error is =============\(error.localizedDescription)")
+                }
+                print(responseBody)
+            }
+            task.resume()
+        }
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
