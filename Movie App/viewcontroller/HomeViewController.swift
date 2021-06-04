@@ -7,7 +7,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController ,DataChange{
+    func onChangeData() {
+        
+    }
+    
 
     @IBOutlet weak var tableView:UITableView!
 
@@ -41,9 +45,8 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieCell
        
-        cell.movieTitle.text = popularMovie[indexPath.row].title
-        cell.movieDescription.text = popularMovie[indexPath.row].overview
-        cell.movieImage.load(url: URL(string: "https://image.tmdb.org/t/p/original\(popularMovie[indexPath.row].poster_path)")!)
+        cell.configure(movieName: popularMovie[indexPath.row].title, movieDescription: popularMovie[indexPath.row].overview, moviePath: popularMovie[indexPath.row].poster_path)
+    
 
         
         return cell
@@ -53,6 +56,7 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let viewC = storyBoard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
                 viewC.movie = popularMovie[indexPath.row]
+                viewC.onChange = self
                present(viewC, animated: true, completion: nil)
                 
         
