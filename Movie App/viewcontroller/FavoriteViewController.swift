@@ -9,7 +9,7 @@ import UIKit
 
 class FavoriteViewController: UIViewController, DataChange {
     func onChangeData() {
-        
+        fetchData()
     }
     
     
