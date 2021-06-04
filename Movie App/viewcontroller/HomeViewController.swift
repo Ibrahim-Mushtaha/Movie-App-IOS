@@ -12,10 +12,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView:UITableView!
 
     var popularMovie = [Movie]()
+    var alert :UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        showloading()
         tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "movieCell")
         tableView.dataSource = self
         tableView.delegate = self
@@ -50,18 +52,12 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let viewC = storyBoard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-                //viewC.category = data[indexPath.row]
+                viewC.movie = popularMovie[indexPath.row]
                present(viewC, animated: true, completion: nil)
                 
-               // self.dataRow = data[indexPath.row]
         
         print("Selected item \(popularMovie[indexPath.row])")
-        
-      //  tableView.deselectRow(at: indexPath, animated: true)
     
-        /* let vc  = DetailVC()
-        vc.category = data[indexPath.row]
-       present(vc, animated: true)*/
     }
     
     
@@ -81,7 +77,6 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
                                 let response = try JSONDecoder().decode(MovieResponse.self, from: data)
 
                                 DispatchQueue.main.async {
-                                 //   self.popularMovie = response
                                     for movie in response.results {
                                        movieResults.append(movie)
                                         print("Movie Object is ==> ", movie.original_title)
@@ -90,7 +85,8 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
                                     self.popularMovie = movieResults
 
                                     self.tableView.reloadData()
-                                    
+                                    self.alert?.dismiss(animated: false, completion: nil)
+
                                     print("Finished loading Movies")
                                 }
                             } catch {
@@ -102,6 +98,18 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
         }
     }
     
+    
+    func showloading(){
+         alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+
+        self.alert?.view.addSubview(loadingIndicator)
+        present(self.alert!, animated: true, completion: nil)
+    }
 }
 
 

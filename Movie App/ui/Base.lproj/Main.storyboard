@@ -146,13 +146,13 @@
                                 <rect key="frame" x="0.0" y="244" width="414" height="599"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activation of 11 lakh frozen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpc-R6-JSp">
-                                        <rect key="frame" x="16" y="28" width="262.5" height="25.5"/>
+                                        <rect key="frame" x="16" y="16" width="262.5" height="25.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54V-b8-vNA">
-                                        <rect key="frame" x="16" y="61.5" width="81" height="24"/>
+                                        <rect key="frame" x="16" y="49.5" width="81" height="24"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indian News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHd-vG-0E8">
                                                 <rect key="frame" x="11" y="6" width="59" height="12"/>
@@ -169,7 +169,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDE-Gt-2jj">
-                                        <rect key="frame" x="16" y="107.5" width="382" height="172"/>
+                                        <rect key="frame" x="16" y="95.5" width="382" height="172"/>
                                         <string key="text">IIFL Securities Ltd, one of India’s leading broking and advisory firms today said that 11 lakh frozen Karvy demat account holders can now trade or invest on its platform. IIFL Securities has won the official bid to acquire all demat accounts held by Karvy Stock Broking with National Securities Depository Ltd and Central Depository Services Ltd.
 </string>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -177,13 +177,13 @@
                                         <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casting Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKf-Ft-iCV">
-                                        <rect key="frame" x="16" y="291.5" width="134" height="25.5"/>
+                                        <rect key="frame" x="16" y="279.5" width="134" height="25.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="15D-vg-3AD">
-                                        <rect key="frame" x="4" y="329" width="406" height="165"/>
+                                        <rect key="frame" x="4" y="317" width="406" height="165"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="165" id="wwu-7v-Qyc"/>
@@ -248,16 +248,37 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dd7-rG-k79">
+                                        <rect key="frame" x="348" y="16" width="42" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEp-qF-J1z">
+                                                <rect key="frame" x="6" y="6" width="30" height="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="star" catalog="system"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <constraints>
+                                            <constraint firstItem="PEp-qF-J1z" firstAttribute="leading" secondItem="dd7-rG-k79" secondAttribute="leading" constant="6" id="And-Tx-S0h"/>
+                                            <constraint firstAttribute="bottom" secondItem="PEp-qF-J1z" secondAttribute="bottom" constant="6" id="VP0-xX-EBR"/>
+                                            <constraint firstAttribute="trailing" secondItem="PEp-qF-J1z" secondAttribute="trailing" constant="6" id="bUk-7b-5Xh"/>
+                                            <constraint firstAttribute="width" constant="42" id="fbs-xc-fCV"/>
+                                            <constraint firstAttribute="height" constant="42" id="mUj-sJ-Wds"/>
+                                            <constraint firstItem="PEp-qF-J1z" firstAttribute="top" secondItem="dd7-rG-k79" secondAttribute="top" constant="6" id="mdW-KU-NlR"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="54V-b8-vNA" firstAttribute="top" secondItem="zpc-R6-JSp" secondAttribute="bottom" constant="8" symbolic="YES" id="12J-xX-d0N"/>
+                                    <constraint firstItem="dd7-rG-k79" firstAttribute="top" secondItem="zpc-R6-JSp" secondAttribute="top" id="4b3-Bb-LKt"/>
                                     <constraint firstAttribute="trailing" secondItem="yDE-Gt-2jj" secondAttribute="trailing" constant="16" id="89a-Zs-eEU"/>
                                     <constraint firstItem="54V-b8-vNA" firstAttribute="leading" secondItem="U7q-ar-hMk" secondAttribute="leading" constant="16" id="IBV-2h-5p0"/>
                                     <constraint firstItem="zpc-R6-JSp" firstAttribute="leading" secondItem="U7q-ar-hMk" secondAttribute="leading" constant="16" id="Qwr-Ko-tjQ"/>
                                     <constraint firstItem="yDE-Gt-2jj" firstAttribute="leading" secondItem="U7q-ar-hMk" secondAttribute="leading" constant="16" id="RFg-sV-JDC"/>
                                     <constraint firstAttribute="trailing" secondItem="54V-b8-vNA" secondAttribute="trailing" constant="317" id="UHK-dU-vNX"/>
-                                    <constraint firstItem="zpc-R6-JSp" firstAttribute="top" secondItem="U7q-ar-hMk" secondAttribute="top" constant="28" id="eRu-he-FrE"/>
+                                    <constraint firstAttribute="trailing" secondItem="dd7-rG-k79" secondAttribute="trailing" constant="24" id="UJV-pI-THK"/>
+                                    <constraint firstItem="zpc-R6-JSp" firstAttribute="top" secondItem="U7q-ar-hMk" secondAttribute="top" constant="16" id="eRu-he-FrE"/>
                                     <constraint firstItem="yDE-Gt-2jj" firstAttribute="top" secondItem="54V-b8-vNA" secondAttribute="bottom" constant="22" id="jqA-ko-Rjz"/>
                                     <constraint firstItem="yKf-Ft-iCV" firstAttribute="top" secondItem="yDE-Gt-2jj" secondAttribute="bottom" constant="12" id="mJR-eF-a99"/>
                                     <constraint firstItem="15D-vg-3AD" firstAttribute="leading" secondItem="U7q-ar-hMk" secondAttribute="leading" constant="4" id="pFj-c7-VzS"/>
@@ -279,6 +300,12 @@
                             <constraint firstItem="JI2-mB-ZGK" firstAttribute="leading" secondItem="CnI-4l-jDg" secondAttribute="leading" id="zhR-De-L3b"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="movieDescription" destination="yDE-Gt-2jj" id="3Mr-ps-DxK"/>
+                        <outlet property="movieImageView" destination="JI2-mB-ZGK" id="Ueq-7m-fYe"/>
+                        <outlet property="movieTitle" destination="zpc-R6-JSp" id="e5z-1X-P8G"/>
+                        <outlet property="uiRoundedContinar" destination="dd7-rG-k79" id="0rM-g4-YyS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SO3-nu-xur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -367,6 +394,7 @@
     <resources>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="image2" width="5415" height="3610"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="0.98431372549019602" green="0.97254901960784312" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -376,6 +404,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -8,22 +8,34 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
+    
+    var movie:Movie?
 
+    @IBOutlet weak var movieImageView: UIImageView!
+    
+    @IBOutlet weak var movieTitle: UILabel!
+    
+    @IBOutlet weak var movieDescription: UILabel!
+    
+    @IBOutlet weak var uiRoundedContinar: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let movie = self.movie{
+            self.movieTitle.text = movie.original_title
+            self.movieDescription.text = movie.overview
+            
+            movieImageView.load(url: URL(string: "https://image.tmdb.org/t/p/original\(movie.poster_path)")!)
+            
+            uiRoundedContinar.dropShadow()
+            uiRoundedContinar.layer.cornerRadius = 8
+            uiRoundedContinar.layer.shadowRadius = 4
+        
+            
+        }
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
