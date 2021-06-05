@@ -22,6 +22,8 @@
 		A28504B8266A8D1D00D1B770 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28504B6266A8D1D00D1B770 /* Favorite+CoreDataClass.swift */; };
 		A28504B9266A8D1D00D1B770 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28504B7266A8D1D00D1B770 /* Favorite+CoreDataProperties.swift */; };
 		A28504BE266A8FBF00D1B770 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28504BD266A8FBF00D1B770 /* FavoriteViewController.swift */; };
+		A29651EA266BBBB300D03F9B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29651E9266BBBB300D03F9B /* SearchViewController.swift */; };
+		A29651ED266BBFF400D03F9B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29651EC266BBFF400D03F9B /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		A28504B6266A8D1D00D1B770 /* Favorite+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A28504B7266A8D1D00D1B770 /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A28504BD266A8FBF00D1B770 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		A29651E9266BBBB300D03F9B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A29651EC266BBFF400D03F9B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				A26F67EC265FB4E1008F3F27 /* HomeViewController.swift */,
 				A26B214126698C8C00EDCC71 /* DetailsViewController.swift */,
 				A28504BD266A8FBF00D1B770 /* FavoriteViewController.swift */,
+				A29651E9266BBBB300D03F9B /* SearchViewController.swift */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				A27796E12666CF3000468B52 /* Movie.swift */,
+				A29651EC266BBFF400D03F9B /* Constant.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -219,8 +225,10 @@
 				A2247134265CFBD900EF3081 /* ViewController.swift in Sources */,
 				A2247130265CFBD900EF3081 /* AppDelegate.swift in Sources */,
 				A26B213A2669670200EDCC71 /* MovieCell.swift in Sources */,
+				A29651EA266BBBB300D03F9B /* SearchViewController.swift in Sources */,
 				A28504B8266A8D1D00D1B770 /* Favorite+CoreDataClass.swift in Sources */,
 				A224713A265CFBD900EF3081 /* Movie_App.xcdatamodeld in Sources */,
+				A29651ED266BBFF400D03F9B /* Constant.swift in Sources */,
 				A27796E22666CF3000468B52 /* Movie.swift in Sources */,
 				A2247132265CFBD900EF3081 /* SceneDelegate.swift in Sources */,
 				A26B214226698C8C00EDCC71 /* DetailsViewController.swift in Sources */,

@@ -1,41 +1,64 @@
 //
-//  HomeViewController.swift
+//  SearchViewController.swift
 //  Movie App
 //
-//  Created by Ibrahim Mushtaha on 27/05/2021.
+//  Created by Ibrahim Mushtaha on 05/06/2021.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController ,DataChange{
+class SearchViewController: UIViewController,DataChange{
     func onChangeData() {
         
     }
     
 
     @IBOutlet weak var tableView:UITableView!
-
+    @IBOutlet weak var uiSearchController: UISearchBar!
+    
     var popularMovie = [Movie]()
     var alert :UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        showloading()
-        tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "movieCell")
+    
+        tableView.register(UINib(nibName: Constant.MOVIECELL, bundle: nil), forCellReuseIdentifier: Constant.MOVIE_CELL_ITEM)
         tableView.dataSource = self
         tableView.delegate = self
         
+        uiSearchController.delegate = self
         
-        getMovie()
         
     }
     
     
+    func showloading(){
+         alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
 
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+
+        self.alert?.view.addSubview(loadingIndicator)
+        present(self.alert!, animated: true, completion: nil)
+    }
+    
 }
 
-extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
+extension SearchViewController:UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.showloading()
+            self.getMovie(name: searchText)
+        }
+    }
+    
+}
+
+extension SearchViewController:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return popularMovie.count
@@ -65,7 +88,7 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
     }
     
     
-    func getMovie(){
+    func getMovie(name:String){
         let session = URLSession.shared
         var movieResults = [Movie]()
         let page = "1"
@@ -82,7 +105,9 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
 
                                 DispatchQueue.main.async {
                                     for movie in response.results {
-                                       movieResults.append(movie)
+                                        if (movie.original_title.contains(name)) {
+                                            movieResults.append(movie)
+                                        }
                                         print("Movie Object is ==> ", movie.original_title)
                                     }
 
@@ -101,35 +126,5 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
             task.resume()
         }
     }
-    
 
-    
-    func showloading(){
-         alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.gray
-        loadingIndicator.startAnimating();
-
-        self.alert?.view.addSubview(loadingIndicator)
-        present(self.alert!, animated: true, completion: nil)
-    }
 }
-
-
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
-}
-
-
