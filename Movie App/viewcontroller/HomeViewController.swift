@@ -22,7 +22,7 @@ class HomeViewController: UIViewController ,DataChange{
         super.viewDidLoad()
 
         showloading()
-        tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "movieCell")
+        tableView.register(UINib(nibName: Constant.MOVIECELL, bundle: nil), forCellReuseIdentifier: Constant.MOVIE_CELL_ITEM)
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -43,7 +43,7 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.MOVIE_CELL_ITEM, for: indexPath) as! MovieCell
        
         cell.configure(movieName: popularMovie[indexPath.row].title, movieDescription: popularMovie[indexPath.row].overview, moviePath: popularMovie[indexPath.row].poster_path)
     
@@ -53,14 +53,13 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let viewC = storyBoard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+       
+        let storyBoard = UIStoryboard(name: Constant.STORYBOARDNAME, bundle: nil)
+        let viewC = storyBoard.instantiateViewController(withIdentifier: Constant.DETAILSVIEWCONTROLLER) as! DetailsViewController
                 viewC.movie = popularMovie[indexPath.row]
                 viewC.onChange = self
                present(viewC, animated: true, completion: nil)
                 
-        
-        print("Selected item \(popularMovie[indexPath.row])")
     
     }
     
@@ -68,10 +67,7 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
     func getMovie(){
         let session = URLSession.shared
         var movieResults = [Movie]()
-        let page = "1"
-        let lang = "en-US"
-        let apiKey = "28e048b6b84fcf21173939d6517a99ce"
-        if let url = URL(string: "https://api.themoviedb.org/3/movie/popular?page=\(page)&api_key=\(apiKey)&language=\(lang)"){
+        if let url = URL(string: "\(Constant.BASICURL)popular?page=\(Constant.PAGE)&api_key=\(Constant.APIKEY)&language=\(Constant.LANG)"){
             let task  = session.dataTask(with: url) { (data, res, error) in
                 let responseBody =  String(data: data!, encoding: .utf8)
                 let decoder = JSONDecoder()
@@ -87,16 +83,13 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
                                     }
 
                                     self.popularMovie = movieResults
-
                                     self.tableView.reloadData()
                                     self.alert?.dismiss(animated: false, completion: nil)
 
-                                    print("Finished loading Movies")
                                 }
                             } catch {
                                 print("Failed to decode: ", error)
                             }
-                print(responseBody)
             }
             task.resume()
         }

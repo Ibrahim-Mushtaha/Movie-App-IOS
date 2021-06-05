@@ -129,28 +129,11 @@
                                 <rect key="frame" x="0.0" y="244" width="414" height="599"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activation of 11 lakh frozen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpc-R6-JSp">
-                                        <rect key="frame" x="16" y="16" width="262.5" height="25.5"/>
+                                        <rect key="frame" x="16" y="16" width="324" height="25.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54V-b8-vNA">
-                                        <rect key="frame" x="16" y="49.5" width="81" height="24"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indian News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHd-vG-0E8">
-                                                <rect key="frame" x="11" y="6" width="59" height="12"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <constraints>
-                                            <constraint firstItem="hHd-vG-0E8" firstAttribute="centerY" secondItem="54V-b8-vNA" secondAttribute="centerY" id="8kq-8j-smO"/>
-                                            <constraint firstItem="hHd-vG-0E8" firstAttribute="centerX" secondItem="54V-b8-vNA" secondAttribute="centerX" id="U5O-9n-UYe"/>
-                                            <constraint firstAttribute="height" constant="24" id="Zse-24-lKe"/>
-                                        </constraints>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDE-Gt-2jj">
                                         <rect key="frame" x="16" y="95.5" width="382" height="172"/>
                                         <string key="text">IIFL Securities Ltd, one of India’s leading broking and advisory firms today said that 11 lakh frozen Karvy demat account holders can now trade or invest on its platform. IIFL Securities has won the official bid to acquire all demat accounts held by Karvy Stock Broking with National Securities Depository Ltd and Central Depository Services Ltd.
@@ -253,19 +236,39 @@
                                             <constraint firstItem="PEp-qF-J1z" firstAttribute="top" secondItem="dd7-rG-k79" secondAttribute="top" constant="6" id="mdW-KU-NlR"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54V-b8-vNA">
+                                        <rect key="frame" x="16" y="49.5" width="86" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indian News" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHd-vG-0E8">
+                                                <rect key="frame" x="8" y="8" width="70" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstItem="hHd-vG-0E8" firstAttribute="leading" secondItem="54V-b8-vNA" secondAttribute="leading" constant="8" id="Bop-V6-CuI"/>
+                                            <constraint firstItem="hHd-vG-0E8" firstAttribute="top" secondItem="54V-b8-vNA" secondAttribute="top" constant="8" id="JaP-Qe-z1Z"/>
+                                            <constraint firstAttribute="height" constant="32" id="NpL-mp-WnN"/>
+                                            <constraint firstAttribute="trailing" secondItem="hHd-vG-0E8" secondAttribute="trailing" constant="8" id="VUk-Og-WDb"/>
+                                            <constraint firstAttribute="width" constant="86" id="g1K-Hu-Uy8"/>
+                                            <constraint firstAttribute="bottom" secondItem="hHd-vG-0E8" secondAttribute="bottom" constant="8" id="jV9-uC-hGo"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="54V-b8-vNA" firstAttribute="top" secondItem="zpc-R6-JSp" secondAttribute="bottom" constant="8" symbolic="YES" id="12J-xX-d0N"/>
+                                    <constraint firstItem="54V-b8-vNA" firstAttribute="top" secondItem="zpc-R6-JSp" secondAttribute="bottom" constant="8" id="3q2-t1-b0F"/>
                                     <constraint firstItem="dd7-rG-k79" firstAttribute="top" secondItem="zpc-R6-JSp" secondAttribute="top" id="4b3-Bb-LKt"/>
                                     <constraint firstAttribute="trailing" secondItem="yDE-Gt-2jj" secondAttribute="trailing" constant="16" id="89a-Zs-eEU"/>
-                                    <constraint firstItem="54V-b8-vNA" firstAttribute="leading" secondItem="U7q-ar-hMk" secondAttribute="leading" constant="16" id="IBV-2h-5p0"/>
+                                    <constraint firstItem="54V-b8-vNA" firstAttribute="leading" secondItem="U7q-ar-hMk" secondAttribute="leading" constant="16" id="Eg8-LV-c84"/>
+                                    <constraint firstItem="yDE-Gt-2jj" firstAttribute="top" secondItem="54V-b8-vNA" secondAttribute="bottom" constant="14" id="IQb-ue-tdQ"/>
+                                    <constraint firstItem="dd7-rG-k79" firstAttribute="leading" secondItem="zpc-R6-JSp" secondAttribute="trailing" constant="8" id="Lok-A3-hmJ"/>
                                     <constraint firstItem="zpc-R6-JSp" firstAttribute="leading" secondItem="U7q-ar-hMk" secondAttribute="leading" constant="16" id="Qwr-Ko-tjQ"/>
                                     <constraint firstItem="yDE-Gt-2jj" firstAttribute="leading" secondItem="U7q-ar-hMk" secondAttribute="leading" constant="16" id="RFg-sV-JDC"/>
-                                    <constraint firstAttribute="trailing" secondItem="54V-b8-vNA" secondAttribute="trailing" constant="317" id="UHK-dU-vNX"/>
                                     <constraint firstAttribute="trailing" secondItem="dd7-rG-k79" secondAttribute="trailing" constant="24" id="UJV-pI-THK"/>
                                     <constraint firstItem="zpc-R6-JSp" firstAttribute="top" secondItem="U7q-ar-hMk" secondAttribute="top" constant="16" id="eRu-he-FrE"/>
-                                    <constraint firstItem="yDE-Gt-2jj" firstAttribute="top" secondItem="54V-b8-vNA" secondAttribute="bottom" constant="22" id="jqA-ko-Rjz"/>
                                     <constraint firstItem="yKf-Ft-iCV" firstAttribute="top" secondItem="yDE-Gt-2jj" secondAttribute="bottom" constant="12" id="mJR-eF-a99"/>
                                     <constraint firstItem="15D-vg-3AD" firstAttribute="leading" secondItem="U7q-ar-hMk" secondAttribute="leading" constant="4" id="pFj-c7-VzS"/>
                                     <constraint firstItem="yKf-Ft-iCV" firstAttribute="leading" secondItem="U7q-ar-hMk" secondAttribute="leading" constant="16" id="vkk-Qj-N5q"/>
@@ -287,10 +290,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="movieCastingTeamList" destination="15D-vg-3AD" id="YMp-Zi-Dvv"/>
                         <outlet property="movieDescription" destination="yDE-Gt-2jj" id="3Mr-ps-DxK"/>
                         <outlet property="movieImageView" destination="JI2-mB-ZGK" id="Ueq-7m-fYe"/>
+                        <outlet property="movieReleaseData" destination="hHd-vG-0E8" id="onN-EK-K0i"/>
                         <outlet property="movieTitle" destination="zpc-R6-JSp" id="e5z-1X-P8G"/>
                         <outlet property="uiFavoriteImage" destination="PEp-qF-J1z" id="PyP-WU-Hbs"/>
+                        <outlet property="uiReleaseContainer" destination="54V-b8-vNA" id="KzH-66-EjT"/>
                         <outlet property="uiRoundedContinar" destination="dd7-rG-k79" id="0rM-g4-YyS"/>
                     </connections>
                 </viewController>

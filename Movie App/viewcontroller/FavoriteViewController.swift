@@ -8,11 +8,10 @@
 import UIKit
 
 class FavoriteViewController: UIViewController, DataChange {
+    
     func onChangeData() {
         fetchData()
     }
-    
-    
     
     @IBOutlet weak var uiTableView: UITableView!
     
@@ -28,12 +27,10 @@ class FavoriteViewController: UIViewController, DataChange {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        uiTableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "movieCell")
+        uiTableView.register(UINib(nibName: Constant.MOVIECELL, bundle: nil), forCellReuseIdentifier: Constant.MOVIE_CELL_ITEM)
         
         uiTableView.dataSource = self
         uiTableView.delegate = self
-        
-       // fetchData()
         
     }
     
@@ -60,7 +57,7 @@ extension FavoriteViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.MOVIE_CELL_ITEM, for: indexPath) as! MovieCell
        
         cell.configure(movieName: data[indexPath.row].original_title!, movieDescription: data[indexPath.row].overview!, moviePath: data[indexPath.row].poster_path!)
         return cell
@@ -68,10 +65,10 @@ extension FavoriteViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let viewC = storyBoard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-                viewC.favorite = data[indexPath.row]
-                viewC.onChange = self
+        let storyBoard = UIStoryboard(name: Constant.STORYBOARDNAME, bundle: nil)
+        let viewC = storyBoard.instantiateViewController(withIdentifier: Constant.DETAILSVIEWCONTROLLER) as! DetailsViewController
+               viewC.favorite = data[indexPath.row]
+               viewC.onChange = self
                present(viewC, animated: true, completion: nil)
 
     }

@@ -14,6 +14,7 @@ class DetailsViewController: UIViewController {
     var movie:Movie?
     var favorite: Favorite?
 
+    @IBOutlet weak var movieCastingTeamList: UICollectionView!
     @IBOutlet weak var movieImageView: UIImageView!
     
     @IBOutlet weak var movieTitle: UILabel!
@@ -23,6 +24,9 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var uiRoundedContinar: UIView!
     
     @IBOutlet weak var uiFavoriteImage: UIButton!
+    
+    @IBOutlet weak var movieReleaseData: UILabel!
+    @IBOutlet weak var uiReleaseContainer: UIView!
     
     var onChange:DataChange!
     
@@ -42,13 +46,6 @@ class DetailsViewController: UIViewController {
                         self.uiFavoriteImage.imageView?.image = UIImage(named: "star.fill")
                         self.uiFavoriteImage.imageView?.tintColor = UIColor.red
                         self.isAdded = true
-                       /* self.favorite = Favorite(context: self.context)
-                        self.favorite?.movie_id = favObject.movie_id
-                        self.favorite?.overview = favObject.overview
-                        self.favorite?.original_title = favObject.original_title
-                        self.favorite?.poster_path = favObject.poster_path
-                        self.favorite?.release_date = favObject.release_date
- */
                     }
                 }
                 
@@ -91,20 +88,23 @@ class DetailsViewController: UIViewController {
         if let movie = self.movie{
             self.movieTitle.text = movie.original_title
             self.movieDescription.text = movie.overview
+            self.movieReleaseData.text = movie.release_date
             
-            movieImageView.load(url: URL(string: "https://image.tmdb.org/t/p/original\(movie.poster_path)")!)
+            movieImageView.load(url: URL(string: "\(Constant.BASICIMAGEURL)\(movie.poster_path)")!)
         
         }else{
             self.movieTitle.text = favorite!.original_title
             self.movieDescription.text = favorite?.overview
+            self.movieReleaseData.text = favorite?.release_date
             
          /*   movieImageView.load(url: URL(string: "https://image.tmdb.org/t/p/original\(favorite?.poster_path)")!)
              */
         }
         
+        uiReleaseContainer.dropShadow()
+        uiReleaseContainer.addCorner()
         uiRoundedContinar.dropShadow()
-        uiRoundedContinar.layer.cornerRadius = 8
-        uiRoundedContinar.layer.shadowRadius = 4
+        uiRoundedContinar.addCorner()
         
     }
     
