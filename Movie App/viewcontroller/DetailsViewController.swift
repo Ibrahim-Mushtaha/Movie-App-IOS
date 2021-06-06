@@ -11,6 +11,8 @@ class DetailsViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var webserviceImage = ["image2","image1"]
+    
     var movie:Movie?
     var favorite: Favorite?
 
@@ -75,7 +77,6 @@ class DetailsViewController: UIViewController {
         } catch let error {
             print(error.localizedDescription)
         }
-        
     
         
     }
@@ -84,6 +85,8 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         
+        movieCastingTeamList.delegate = self
+        movieCastingTeamList.dataSource = self
 
         if let movie = self.movie{
             self.movieTitle.text = movie.original_title
@@ -106,6 +109,7 @@ class DetailsViewController: UIViewController {
         uiRoundedContinar.dropShadow()
         uiRoundedContinar.addCorner()
         
+       
     }
     
 
@@ -148,6 +152,28 @@ class DetailsViewController: UIViewController {
             
         }
     }
+    
+
+    
+}
+
+extension DetailsViewController : UICollectionViewDelegate , UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
+
+func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return webserviceImage.count
+}
+
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+    let cell = movieCastingTeamList.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+
+    cell.uiPersonImage.setRounded(corner: 8)
+    cell.uiPersonImage.image = UIImage(named: webserviceImage[indexPath.row])
+
+    return cell
+}
+
+
 }
 
 protocol DataChange {

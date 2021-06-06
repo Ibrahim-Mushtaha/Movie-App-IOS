@@ -134,7 +134,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDE-Gt-2jj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDE-Gt-2jj">
                                         <rect key="frame" x="16" y="95.5" width="382" height="172"/>
                                         <string key="text">IIFL Securities Ltd, one of India’s leading broking and advisory firms today said that 11 lakh frozen Karvy demat account holders can now trade or invest on its platform. IIFL Securities has won the official bid to acquire all demat accounts held by Karvy Stock Broking with National Securities Depository Ltd and Central Depository Services Ltd.
 </string>
@@ -161,15 +161,19 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gND-G6-3BP">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="gND-G6-3BP" customClass="CollectionViewCell" customModule="Movie_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="155" height="165"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zjG-63-FcC">
                                                     <rect key="frame" x="0.0" y="0.0" width="155" height="165"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eUv-E4-xBW">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eUv-E4-xBW">
                                                             <rect key="frame" x="0.0" y="0.0" width="155" height="165"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="155" id="54u-25-ycR"/>
+                                                                <constraint firstAttribute="height" constant="165" id="xD7-hR-vK6"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
@@ -180,6 +184,9 @@
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="155" height="165"/>
+                                                <connections>
+                                                    <outlet property="uiPersonImage" destination="eUv-E4-xBW" id="QY0-ng-uox"/>
+                                                </connections>
                                             </collectionViewCell>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Sa8-ph-UQn">
                                                 <rect key="frame" x="165" y="0.0" width="155" height="165"/>
